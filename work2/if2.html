@@ -7,10 +7,10 @@
     <title>Vue</title>
 </head>
 <body>
-    <!--
+    <!--반복문 <div v-for="(a,i) in product" :key="i">
     -->
     <div id="app">
-        <button v-on:click="AA">버튼</button>
+        <div v-for="(item,i) in a" :key="i">{{ item.n }} : {{ item.ad }}:{{i}}</div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -19,14 +19,13 @@
             el:"#app",
             data(){
                 return{
-                    a: "HELLOW VUE!!",
+                    a: [
+					{ n:"홍길동", ad:"서울" },
+					{ n:"김철수", ad:"부산" },
+					{ n:"이영희", ad:"제주도" },
+				],
                 }
-            },
-            methods: {//클릭 등의 이벤트 발생시 실행되는 함수
-			AA: function(){
-				alert("HELLOW VUE!!");
-			}
-		},
+            }
         });
     </script>
 </body>
